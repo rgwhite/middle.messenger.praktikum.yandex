@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../src/main.css">
+    <link rel="stylesheet" href="../src/index.css">
+    <title>Страницы</title>
+</head>
+<body>
+    <div class="nav">
+        {{#each pages}}  
+        {{> buttons/linkButton class="nav__link" href=this.href text=this.title}}
+        {{/each}}
+    </div>
+</body>
+</html>

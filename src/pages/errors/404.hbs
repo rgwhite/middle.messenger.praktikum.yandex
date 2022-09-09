@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../main.css">
+    <link rel="stylesheet" href="../../components/buttons/linkButton.css">
+    <link rel="stylesheet" href="error.css">
+    <title>{{pages.404.title}}</title>
+</head>
+<body>
+    <div class="container">
+        <div class="container__title">
+            <span>404</span>
+        </div>
+        <div class="container__body">
+            <span>Не туда попали</span>
+        </div>
+        <div class="container__buttons"></div>
+            {{> buttons/linkButton href=pages.chat.href class="error-container__link-button" text="Назад к чатам"}}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+{
+    "signin": {
+        "title": "Вход",
+        "href": "/src/pages/authorization/signin.hbs"
+    },
+    "signup": {
+        "title": "Регистрация",
+        "href": "/src/pages/authorization/signup.hbs"
+    },
+    "profile": {
+        "title": "Профиль",
+        "href": "/src/pages/profile/profile.hbs"
+    },
+    "changeProfileData": {
+        "title": "Изменить данные",
+        "href": "/src/pages/profile/changeProfileData.hbs"
+    },
+    "changePassword": {
+        "title": "Изменить пароль",
+        "href": "/src/pages/profile/changePassword.hbs"
+    },
+    "chat": {
+        "title": "Чат",
+        "href": "/src/pages/chat/chat.hbs"
+    },
+    "404": {
+        "title": "Ошибка 404",
+        "href": "/src/pages/errors/404.hbs"
+    },
+    "500": {
+        "title": "Ошибка 500",
+        "href": "/src/pages/errors/500.hbs"
+    }
+}
