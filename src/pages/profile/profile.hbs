@@ -1,0 +1,26 @@
+---
+title: Профиль
+css:
+- profile.css
+---
+{{!< profile/profile }}
+<div class="container">
+        <div class="container__title">
+            <span>{{user.firstName}}</span>
+        </div>
+        <form action="" class="container__form">
+            <div class="container__fields">
+                {{> form/groupItem class="group-item-side" label="Почта" value=user.email disabled="true"}}
+                {{> form/groupItem class="group-item-side" label="Логин" value=user.login disabled="true"}}
+                {{> form/groupItem class="group-item-side" label="Имя" value=user.firstName disabled="true"}}
+                {{> form/groupItem class="group-item-side" label="Фамилия" value=user.secondName disabled="true"}}
+                {{> form/groupItem class="group-item-side" label="Имя в чате" value=user.displayName disabled="true"}}
+                {{> form/groupItem class="group-item-side" label="Телефон" value=user.phone disabled="true"}}
+            </div>
+            <div class="container__buttons">
+                {{> buttons/linkButton href=pages.changeProfileData.href text="Изменить данные"}}
+                {{> buttons/linkButton href=pages.changePassword.href text="Изменить пароль"}}
+                {{> buttons/linkButton href=pages.signin.href class="button-red" text="Выйти"}}
+            </div>
+        </form>
+    </div>

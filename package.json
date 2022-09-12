@@ -1,0 +1,24 @@
+{
+  "name": "yp",
+  "version": "1.0.0",
+  "description": "messanger",
+  "scripts": {
+    "build": "parcel build static/index.hbs --no-cache",
+    "start": "npm run build && node ./server.js"
+  },
+  "author": "rgwhite",
+  "license": "ISC",
+  "dependencies": {
+    "@anikin/parcel-transformer-handlebars": "^1.0.9",
+    "@parcel/config-default": "^2.7.0",
+    "express": "^4.18.1",
+    "handlebars": "^4.7.7",
+    "handlebars-helpers": "^0.10.0",
+    "parcel": "^2.7.0",
+    "postcss": "^8.4.16",
+    "postcss-nested": "^5.0.6"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}

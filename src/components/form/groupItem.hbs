@@ -1,0 +1,33 @@
+<div class="{{#if class}}{{class}}{{else}}group-item{{/if}}">
+    {{#if label}}
+    <label
+        {{#if id}}
+        for="{{id}}"
+        {{/if}}
+        class="{{#if class}}{{class}}{{else}}group-item{{/if}}__label"
+    >
+       {{label}}
+    </label>
+    {{/if}}
+    <input
+        {{#if id}}
+        id="{{id}}"
+        {{/if}}
+        class="{{#if class}}{{class}}{{else}}group-item{{/if}}__input"
+        {{#if name}}
+        name="{{name}}"
+        {{/if}}
+        {{#if placeholder}}
+        placeholder="{{placeholder}}"
+        {{/if}}
+        {{#if type}}
+        type="{{type}}"
+        {{/if}}
+        {{#if value}}
+        value="{{value}}"
+        {{/if}}
+        {{#if disabled}}
+        disabled
+        {{/if}}
+    >
+</div>
