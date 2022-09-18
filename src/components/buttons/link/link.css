@@ -1,0 +1,18 @@
+.link-button {
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 11px;
+    color: var(--color-blue2);
+}
+
+.link-red {
+    color: var(--color-red2);
+}
+
+.link-profile {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 12px;
+    color: var(--color-gray5);
+    text-decoration: none;
+}

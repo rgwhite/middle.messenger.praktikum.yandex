@@ -1,0 +1,16 @@
+.profile-left-panel {
+    text-decoration: none;
+    
+    &__button {
+        width: 28px;
+        height: 28px;
+        border: 1px solid var(--color-blue2);
+        border-radius: 28px;
+        text-align: center;
+        line-height: 28px;
+        background: var(--color-blue2);
+        color: var(--color-white);
+        display: block;
+        user-select: none;
+    }
+}
