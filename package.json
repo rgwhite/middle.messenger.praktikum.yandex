@@ -3,22 +3,42 @@
   "version": "1.0.0",
   "description": "messanger",
   "scripts": {
-    "build": "parcel build static/index.hbs --no-cache",
-    "start": "npm run build && node ./server.js"
+    "compile": "npx tsc",
+    "build": "parcel build src/index.html --no-cache",
+    "start": "npm run compile && npm run build && node ./server.js"
   },
   "author": "rgwhite",
   "license": "ISC",
   "dependencies": {
-    "@anikin/parcel-transformer-handlebars": "^1.0.9",
-    "@parcel/config-default": "^2.7.0",
-    "express": "^4.18.1",
-    "handlebars": "^4.7.7",
-    "handlebars-helpers": "^0.10.0",
-    "parcel": "^2.7.0",
-    "postcss": "^8.4.16",
-    "postcss-nested": "^5.0.6"
+    "@anikin/parcel-transformer-handlebars": "1.0.9",
+    "@anikin/parcel-transformer-handlebars-precompile": "1.0.1",
+    "@parcel/config-default": "2.7.0",
+    "express": "4.18.1",
+    "handlebars": "4.7.7",
+    "handlebars-helpers": "0.10.0",
+    "nanoid": "4.0.0",
+    "parcel": "2.7.0",
+    "postcss": "8.4.16",
+    "postcss-nested": "5.0.6",
+    "postcss-simple-vars": "7.0.0",
+    "typescript": "4.8.3",
+    "typescript-plugin-css-modules": "3.4.0"
   },
   "engines": {
     "node": ">=12.0.0"
+  },
+  "browserslist": [
+    "> 1%"
+  ],
+  "devDependencies": {
+    "@stylelint/postcss-css-in-js": "^0.38.0",
+    "@typescript-eslint/eslint-plugin": "5.37.0",
+    "@typescript-eslint/parser": "5.37.0",
+    "eslint": "8.23.1",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-plugin-import": "2.26.0",
+    "stylelint": "^14.11.0",
+    "stylelint-config-standard": "^28.0.0"
   }
 }
