@@ -3,7 +3,7 @@ import { nanoid } from "nanoid";
 import EventBus from "./eventBus";
 import { Props, Childs } from "../types/types";
 
-export default class Block {
+export default abstract class Block<P = Props> {
     static EVENTS = {
         INIT: "init",
         FLOW_CDM: "flow:component-did-mount",
@@ -13,15 +13,15 @@ export default class Block {
 
     public id: string = nanoid(6);
     
-    protected props: Props = {};
-    protected children: Childs = {};
+    protected props: Props;
+    protected children: Childs;
     
-    private _meta: Props = {};
-    private _element!: HTMLElement;
+    private _meta: Props;
+    private _element!: HTMLElement; 
     private eventBus: () => EventBus;
 
-    constructor(propsAndChildren: Props = {}) {
-        this._meta = propsAndChildren;
+    constructor(propsAndChildren: P = {} as P) {
+        this._meta = propsAndChildren as Props;
         const eventBus = new EventBus();
         this.eventBus = () => eventBus;
 
@@ -35,10 +35,10 @@ export default class Block {
     }
 
     private _getChildren(propsAndChildren: Props) {
-        const children: Childs = {};
+        const children: Childs = {}; 
         const props: Props = {};
 
-        Object.entries(propsAndChildren).map(([key, value]) => {
+        Object.entries(propsAndChildren).forEach(([key, value]) => {
             if (value instanceof Block) {
                 children[key] = value;
             } else {

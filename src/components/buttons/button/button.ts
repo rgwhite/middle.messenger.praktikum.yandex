@@ -2,9 +2,23 @@ import Block from "../../../core/block";
 import { Props } from "../../../types/types";
 import "./button.css";
 
-export class Button extends Block {
-    constructor(props: Props) {
-        super(props);
+interface ButtonProps extends Props{
+    id?: string,
+    class?: string,
+    form?: string,
+    type?: "button" | "submit",
+    text?: string,
+    onClick?: (event: Event) => void
+}
+
+export class Button extends Block<ButtonProps> {
+    constructor(props: ButtonProps = {}) {
+        super({
+            ...props,
+            events: {
+                click: props.onClick! 
+            }
+        });
     }
 
     render() {

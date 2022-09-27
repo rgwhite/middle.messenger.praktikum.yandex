@@ -13,11 +13,9 @@ export class Nav extends Block {
             props[`link_${name}`] = new Link({
                 href: page.href,
                 text: page.title,
-                events: {
-                    click: (event: Event) => {
-                        event.preventDefault();
-                        redirectToPage(page.href);
-                    }
+                onClick: (event: Event) => {
+                    event.preventDefault();
+                    redirectToPage(page.href);
                 }
             });
         });

@@ -4,11 +4,17 @@ import { Props } from "../../../../types/types";
 //import validate from "../../data/validate.json";
 import "./chatItem.css";
 
-export class ChatItem extends Block {
-    constructor(props: Props = {}) {
-        const moreProps: Props = {};
+interface ChatItemProps extends Props{
+    active?: boolean,
+    name: string,
+    message: string,
+    time: string,
+    count: number
+}
 
-        super({ ...props, ...moreProps });
+export class ChatItem extends Block<ChatItemProps> {
+    constructor(props: ChatItemProps) {
+        super(props);
     }
 
     render() {

@@ -4,11 +4,15 @@ import { Props } from "../../../../types/types";
 //import validate from "../../data/validate.json";
 import "./messageItem.css";
 
-export class MessageItem extends Block {
-    constructor(props: Props = {}) {
-        const moreProps: Props = {};
+interface MessageItemProps extends Props{
+    author: boolean,
+    message: string,
+    time: string,
+}
 
-        super({ ...props, ...moreProps });
+export class MessageItem extends Block<MessageItemProps> {
+    constructor(props: MessageItemProps) {
+        super(props,);
     }
 
     render() {
@@ -16,9 +20,9 @@ export class MessageItem extends Block {
                     <div class="message-item-group__content message-content">
                         <span class="message-content__text">{{message}}</span>
                     </div>
-                    <div class="message-item-group__time">
-                        <span>{{time}}</span>
-                    </div>
+                    <time class="message-item-group__time">
+                        {{time}}
+                    </time>
                 </div>`;
     }
 }

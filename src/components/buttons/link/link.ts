@@ -2,9 +2,22 @@ import Block from "../../../core/block";
 import { Props } from "../../../types/types";
 import "./link.css";
 
-export class Link extends Block {
-    constructor(props: Props) {
-        super(props);
+interface LinkProps extends Props{
+    id?: string,
+    class?: string,
+    href?: string,
+    text?: string,
+    onClick?: (event: Event) => void
+}
+
+export class Link extends Block<LinkProps> {
+    constructor(props: LinkProps = {}) {
+        super({
+            ...props,
+            events: {
+                click: props.onClick!
+            }
+        });
     }
 
     render() {

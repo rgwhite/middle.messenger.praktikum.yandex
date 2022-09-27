@@ -7,15 +7,13 @@ import pages from "../../data/pages.json";
 export class ErrorPage extends Block {
     constructor(props: Props = {}) {
         const moreProps: Props = {
-            "link_back": new Link({
+            "linkBack": new Link({
                 href: pages.chat.href,
                 class: "error-container__link-button",
                 text: "Назад к чатам",
-                events: {
-                    click: (event: Event) => {
-                        event.preventDefault();
-                        redirectToPage(pages.chat.href);
-                    }
+                onClick: (event: Event) => {
+                    event.preventDefault();
+                    redirectToPage(pages.chat.href);
                 }
             })
         };
@@ -32,7 +30,7 @@ export class ErrorPage extends Block {
                         <span>{{text}}</span>
                     </div>
                     <div class="error-container__buttons"></div>
-                        {{{ link_back }}}
+                        {{{ linkBack }}}
                     </div>
                 </div>`;
     }

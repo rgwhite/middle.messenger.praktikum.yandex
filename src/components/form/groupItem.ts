@@ -2,28 +2,42 @@ import Block from "../../core/block";
 import { Props } from "../../types/types";
 import "./groupItem.css";
 
-export class GroupItem extends Block {
-    constructor(props: Props) {
+interface GroupItemProps extends Props{
+    id?: string,
+    name?: string,
+    class?: string,
+    type?: string,
+    value?: string,
+    placeholder?: string,
+    disabled?: boolean,
+    side?: boolean,
+    regexp?: string,
+    error?: string
+}
+
+export class GroupItem extends Block<GroupItemProps> {
+    constructor(props: GroupItemProps = {}) {
         const validate = () => {
-            this.validate();
-        };
-        const moreProps: Props = {
+            return this.validate();
+        }
+        
+        super({
+            ...props,
             events: {
                 blur: validate,
                 focus: validate
-            }
-        };
-
-        super({ ...props, ...moreProps });
+            }   
+        });
     }
 
-    public validate(): boolean {
+    validate = () => {
         const element = this.getContent();
         const input = element.querySelector("input");
-        if (input && this.getMeta().regexp) {
+        const regexp = this.getMeta().regexp;
+        if (regexp) {
             const value = input!.value;
-            const result = RegExp(this.getMeta().regexp).test(value);
-            if (result) {
+            const isValid = RegExp(regexp).test(value);
+            if (isValid) {
                 element.classList.remove("item-invalid");
             } else {
                 element.classList.add("item-invalid");
@@ -32,7 +46,7 @@ export class GroupItem extends Block {
         }
         return true;
     }
-    //{{#if side}}group-item-side{{else}}group-item{{/if}}
+
     render() {
         return `<div class="{{#if side}}group-item-side{{else}}group-item{{/if}} {{#if class}}{{class}}{{/if}}">
                     <div class="{{#if side}}group-item-side{{else}}group-item{{/if}}__field">

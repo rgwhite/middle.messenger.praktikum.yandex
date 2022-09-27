@@ -3,7 +3,7 @@ import { Props } from "../../../../types/types";
 import "./header.css";
 
 export class Header extends Block {
-    constructor(props: Props) {
+    constructor(props: Props = {}) {
         super(props);
     }
 

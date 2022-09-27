@@ -2,9 +2,19 @@ import Block from "../../../../core/block";
 import { Props } from "../../../../types/types";
 import "./leftPanel.css";
 
-export class LeftPanel extends Block {
-    constructor(props: Props) {
-        super(props);
+interface LeftPanelProps extends Props{
+    href?: string,
+    onClick?: (event: Event) => void
+}
+
+export class LeftPanel extends Block<LeftPanelProps> {
+    constructor(props: LeftPanelProps = {}) {
+        super({
+            ...props,
+            events: {
+                click: props.onClick!
+            }
+        });
     }
 
     render() {
