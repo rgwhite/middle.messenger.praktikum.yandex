@@ -14,3 +14,4 @@
 
 ## Пулл реквесты
 [Спринт 1](https://github.com/rgwhite/middle.messenger.praktikum.yandex/pull/1)
+[Спринт 2](https://github.com/rgwhite/middle.messenger.praktikum.yandex/pull/2)

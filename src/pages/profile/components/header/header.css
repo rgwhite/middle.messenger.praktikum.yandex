@@ -1,0 +1,12 @@
+.header {
+    &__avatar {
+        width: 130px;
+        height: 130px;
+        border: 1px solid var(--color-gray3);
+        border-radius: 130px;
+        box-sizing: border-box;
+        background: var(--color-gray3);
+        display: block;
+        cursor: pointer;
+    }
+}
