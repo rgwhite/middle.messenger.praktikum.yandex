@@ -66,17 +66,15 @@ export class Profile extends Block {
             "linkChangeProfileData": new Link({
                 href: pages.changeProfileData.href,
                 text: "Изменить данные",
-                events: {
-                    click: (event: Event) => {
-                        event.preventDefault();
-                        redirectToPage(pages.changeProfileData.href);
-                    }
+                onClick: (event: Event) => {
+                    event.preventDefault();
+                    redirectToPage(pages.changeProfileData.href);
                 }
             }),
             "linkChangePassword": new Link({
                 href: pages.changePassword.href,
                 text: "Изменить пароль",
-                onCick: (event: Event) => {
+                onClick: (event: Event) => {
                     event.preventDefault();
                     redirectToPage(pages.changePassword.href);
                 }
@@ -85,7 +83,7 @@ export class Profile extends Block {
                 href: pages.signIn.href,
                 class: "link-red",
                 text: "Выйти",
-                onCick: (event: Event) => {
+                onClick: (event: Event) => {
                     event.preventDefault();
                     redirectToPage(pages.signIn.href);
                 }

@@ -83,7 +83,7 @@ export class SignUp extends Block {
             "linkSignin": new Link({
                 href: pages.signIn.href,
                 text: "Войти",
-                onCick: (event: Event) => {
+                onClick: (event: Event) => {
                     event.preventDefault();
                     redirectToPage(pages.signIn.href);
                 }

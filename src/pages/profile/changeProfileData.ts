@@ -16,7 +16,7 @@ export class ChangeProfileData extends Block {
         const moreProps: Props = {
             "leftPanel": new LeftPanel({
                 href: pages.chat.href,
-                onCick: (event: Event) => {
+                onClick: (event: Event) => {
                     event.preventDefault();
                     redirectToPage(pages.chat.href);
                 }
